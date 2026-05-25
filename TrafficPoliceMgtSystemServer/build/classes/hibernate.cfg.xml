@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="hibernate.connection.driver_class">
+            org.postgresql.Driver
+        </property>
+
+        <property name="hibernate.connection.url">
+            jdbc:postgresql://localhost:5432/traffic_police_management_system_db
+        </property>
+
+        <property name="hibernate.connection.username">
+            postgres
+        </property>
+
+        <property name="hibernate.connection.password">
+            123
+        </property>
+
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.PostgreSQLDialect
+        </property>
+
+        <property name="hibernate.show_sql">
+            true
+        </property>
+
+        <property name="hibernate.hbm2ddl.auto">
+            update
+        </property>
+
+        <property name="hibernate.current_session_context_class">
+            thread
+        </property>
+
+        <!-- CORRECT FULL PACKAGE NAMES -->
+        <mapping class="rw.gov.trafficpolice.model.Officer"/>
+        <mapping class="rw.gov.trafficpolice.model.Driver"/>
+        <mapping class="rw.gov.trafficpolice.model.ViolationType"/>
+        <mapping class="rw.gov.trafficpolice.model.Ticket"/>
+        <mapping class="rw.gov.trafficpolice.model.Payment"/>
+
+    </session-factory>
+</hibernate-configuration>
